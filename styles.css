@@ -4,20 +4,20 @@
 
 .wrapper{
   margin:auto;
-  width: 80.5%;
+  width: 80%;
 }
 
 .header{
   display: flex;
   justify-content: space-between;
-  margin-bottom: 140px;
+  margin-bottom: 224px;
 }
 
 .logo{
   position: relative;
-  padding: 20px 0;
-  padding-left: 35px;
-  font: bold 20px/28px pt_serifbold,pt_serifregular,pt_serifbold_italic,pt_serifitalic;
+  padding: 34px 0;
+  padding-left: 40px;
+  font: bold 26px/34px pt_serifbold,pt_serifregular,pt_serifbold_italic,pt_serifitalic;
 }
 
 .logo__circle{
@@ -48,8 +48,8 @@
 
 .menu__item{
   position:  relative;
-  margin-right: 20px;
-  font: 500 14px/17px Roboto,arial,helvetica,sans-serif;
+  margin-right: 35px;
+  font: 500 16px/19px Roboto,arial,helvetica,sans-serif;
   color: #000;
   text-decoration: none;
   transition: opacity .5s;
@@ -100,29 +100,33 @@
   width: 100%;
 }
 
-.main{
-  padding: 40px 67% 100px 0;
-  background: top right no-repeat url(img/mainimg.svg);
-  background-size:47%;
-  background-position: top right;
+.main {
+ padding: 0 63% 200px 0;
+ background: top right no-repeat url(img/mainImg.svg);
+ background-size:49%;
+ align-items:stretch;
 }
 
+
 .main__title{
-  margin: 0 0 38px 0;
-  font: bold 50px/65px pt_serifbold,pt_serifregular,pt_serifbold_italic,pt_serifitalic;
+  margin: 0 0 28px 0;
+  font: bold 66px/70px pt_serifbold,pt_serifregular,pt_serifbold_italic,pt_serifitalic;
+  line-height: 80px;
+  margin-bottom: 40px;
 }
 
 .main__subtitle{
-  margin: 0 0 28px 0;
-  font: 18px/21px Roboto,arial,helvetica,sans-serif;
+  margin: 0 100px 100px 0;
+  margin-bottom: 45px;
+  font: 22px/24px Roboto,arial,helvetica,sans-serif;
 }
 
 .main__button{
   display: inline-block;
-  font: 14px/16px Roboto,arial,helvetica,sans-serif;
+  font: 20px/22px Roboto,arial,helvetica,sans-serif;
   color: #fff;
   background: #0056EC;
-  padding: 18px 26px;
+  padding: 19px 19px;
   text-decoration: none;
   border-radius: 4px;
   transition: opacity .5s;
@@ -136,7 +140,11 @@
   background: #ECF3FF;
 }
 
+
 @media (max-width:768px) {
+  .text-on-mobile{
+    display: none;
+  }
   .menu{
     display: none;
   }
@@ -160,4 +168,112 @@
   .main__button{
     font: 500 14px/16px Roboto,arial,helvetica,sans-serif;
   }
+
+  /* скрываем чекбокс */
+  #menu__toggle {
+    opacity: 0;
+  }
+  /* стилизуем кнопку */
+  .menu__btn {
+    display:flex; /* используем flex для центрирования содержимого */
+    align-items: center;
+    justify-content: flex-end;
+    position: absolute;
+    margin-left: 80%;
+    top: 20px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  /* добавляем "гамбургер" */
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #0056EC;
+  }
+  .menu__btn > span::before {
+    content: '';
+    top: -8px;
+  }
+  .menu__btn > span::after {
+    content: '';
+    top: 8px;
+  }
+
+  /* контейнер меню */
+  .menu__box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 40% 0;
+    list-style: none;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+  }
+  /* элементы меню */
+  .menu__item {
+    position:relative;
+    display: block;
+    margin-right: 12px;
+    margin-bottom: 24px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .menu__item::after{
+    position: absolute;
+    display: block;
+    content: '';
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background:#0056EC;
+    opacity: 0;
+    transition: opacity .5s, width .10s;
+  }
+  .menu__item:hover {
+    opacity: .5;
+    background-color: #E5E5E5;
+  }
+
+  #menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    left: 0;
+  }
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  transition-duration: .25s;
+}
+.menu__box {
+  transition-duration: .25s;
+}
+.menu__item {
+  transition-duration: .25s;
+}
 }
