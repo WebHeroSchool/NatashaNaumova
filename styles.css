@@ -10,7 +10,7 @@
 .header{
   display: flex;
   justify-content: space-between;
-  margin-bottom: 224px;
+  margin: 0 0 224px 0;
 }
 
 .logo{
@@ -48,7 +48,9 @@
 
 .menu__item{
   position:  relative;
-  margin-right: 35px;
+  margin-right: 38px;
+  margin-left: 9px;
+  margin-top: 20px;
   font: 500 16px/19px Roboto,arial,helvetica,sans-serif;
   color: #000;
   text-decoration: none;
@@ -121,6 +123,16 @@
   font: 22px/24px Roboto,arial,helvetica,sans-serif;
 }
 
+
+@keyframes move {
+  0% {
+  box-shadow: 0 0 0 0px rgba(0, 86, 236);
+}
+100% {
+  box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+}
+}
+
 .main__button{
   display: inline-block;
   font: 20px/22px Roboto,arial,helvetica,sans-serif;
@@ -133,12 +145,17 @@
 }
 
 .main__button:hover{
-  opacity: .5;
+  border:2px solid #0056EC;
+  background: #fff;
+  color: #0056EC;
+  animation: move 1.4s infinite;
 }
 
 .main__title-text_hightlight{
   background: #ECF3FF;
 }
+
+
 @media (min-width:768px) {
 .hamburger-menu{
   display: none;
