@@ -10,14 +10,15 @@
 .header{
   display: flex;
   justify-content: space-between;
-  margin-bottom: 224px;
+  /*margin-bottom: 224px;*/
+  margin-bottom: 120px;
 }
 
 .logo{
   position: relative;
   padding: 34px 0;
-  padding-left: 40px;
-  font: bold 26px/34px pt_serifbold,pt_serifregular,pt_serifbold_italic,pt_serifitalic;
+  padding-left: 45px;
+  font: bold 24px/34px pt_serifbold,pt_serifregular,pt_serifbold_italic,pt_serifitalic;
 }
 
 .logo__circle{
@@ -48,7 +49,7 @@
 
 .menu__item{
   position:  relative;
-  margin: 20px 38px 0 9px;
+  margin: 20px 38px 0 7px;
   font: 500 16px/19px Roboto,arial,helvetica,sans-serif;
   color: #000;
   text-decoration: none;
@@ -102,18 +103,19 @@
 
 .main {
   position:relative;
+  margin: 0 0 100px 0;
   padding: 0 63% 250px 0;
   background: top right no-repeat url(img/mainimg.svg);
-  background-size:49%;
-  background-position: absolute;
-  margin-bottom: 150px;
+  background-size:51%;
 }
 
 
 .main__title{
-  margin: 0 0 40px 0;
+  margin: 0 0 45px 0;
+  padding-top: 100px;
   font: bold 66px/70px pt_serifbold,pt_serifregular,pt_serifbold_italic,pt_serifitalic;
   line-height: 80px;
+  white-space: nowrap;
 }
 
 .main__subtitle{
@@ -133,10 +135,10 @@
 
 .main__button{
   display: inline-block;
-  font: 20px/22px Roboto,arial,helvetica,sans-serif;
+  font: 18px/20px Roboto,arial,helvetica,sans-serif;
   color: #fff;
   background: #0056EC;
-  padding: 19px 19px;
+  padding: 18px 27px;
   text-decoration: none;
   border-radius: 4px;
   transition: opacity .5s;
@@ -151,6 +153,7 @@
 
 .main__title-text_hightlight{
   background: #ECF3FF;
+  white-space: nowrap;
 }
 
 
